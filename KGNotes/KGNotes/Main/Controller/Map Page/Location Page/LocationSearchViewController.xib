@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LocationSearchViewController">
+            <connections>
+                <outlet property="locationNotFoundView" destination="tvx-Yn-hxJ" id="vKj-Y5-qyr"/>
+                <outlet property="mainView" destination="IgO-DU-Lg6" id="hQp-WC-uUj"/>
+                <outlet property="searchBar" destination="HhL-bG-1vf" id="Fqa-Nl-Eia"/>
+                <outlet property="searchDisplayController" destination="UKu-vQ-Fw2" id="D5X-k0-nfj"/>
+                <outlet property="searchbarTopConstraint" destination="Yb7-Kt-aTO" id="LG6-VA-Ucv"/>
+                <outlet property="tblContentList" destination="Hgy-vE-DGj" id="YVy-vh-g4t"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="kiO-yt-nLd"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IgO-DU-Lg6" userLabel="MainView">
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RgO-vf-32s" userLabel="background view">
+                            <subviews>
+                                <searchBar contentMode="redraw" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhL-bG-1vf">
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="Ul2-fo-fwe"/>
+                                    </connections>
+                                </searchBar>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="HhL-bG-1vf" firstAttribute="width" secondItem="RgO-vf-32s" secondAttribute="width" id="B0H-kb-0SV"/>
+                                <constraint firstItem="HhL-bG-1vf" firstAttribute="leading" secondItem="RgO-vf-32s" secondAttribute="leading" id="T7R-EN-979"/>
+                                <constraint firstItem="HhL-bG-1vf" firstAttribute="top" secondItem="RgO-vf-32s" secondAttribute="top" constant="4" id="Yb7-Kt-aTO"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crj-YZ-iVz" userLabel="Content View">
+                            <subviews>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Hgy-vE-DGj">
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-1" id="u7R-aC-AK5"/>
+                                        <outlet property="delegate" destination="-1" id="vDC-JL-XXk"/>
+                                    </connections>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="Hgy-vE-DGj" firstAttribute="leading" secondItem="crj-YZ-iVz" secondAttribute="trailing" multiplier="10:414" id="4Jx-8u-fgq"/>
+                                <constraint firstItem="Hgy-vE-DGj" firstAttribute="top" secondItem="crj-YZ-iVz" secondAttribute="top" id="CbR-QV-eiM"/>
+                                <constraint firstItem="Hgy-vE-DGj" firstAttribute="width" secondItem="crj-YZ-iVz" secondAttribute="width" multiplier="394:414" id="iZE-GF-ueM"/>
+                                <constraint firstAttribute="bottom" secondItem="Hgy-vE-DGj" secondAttribute="bottom" id="lr4-Ja-pOk"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tvx-Yn-hxJ" userLabel="Location Not Found View">
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="LOCATION NOT FOUND" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRR-bu-m9w">
+                                    <frame key="frameInset" minX="104" minY="50" width="187" height="20"/>
+                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16.5"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please try again later" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1b-9w-Zo4">
+                                    <frame key="frameInset" minX="122" minY="75" width="150" height="20"/>
+                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16.479999542236328"/>
+                                    <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="150" id="Ipi-RH-bIe"/>
+                                <constraint firstAttribute="centerX" secondItem="oRR-bu-m9w" secondAttribute="centerX" id="UVS-eg-0Wt"/>
+                                <constraint firstAttribute="centerX" secondItem="W1b-9w-Zo4" secondAttribute="centerX" id="g05-tK-gyl"/>
+                                <constraint firstItem="W1b-9w-Zo4" firstAttribute="top" secondItem="oRR-bu-m9w" secondAttribute="top" constant="25" id="iwR-i7-Ggr"/>
+                                <constraint firstItem="oRR-bu-m9w" firstAttribute="top" secondItem="tvx-Yn-hxJ" secondAttribute="top" constant="50" id="xeJ-co-Iet"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="crj-YZ-iVz" firstAttribute="height" secondItem="IgO-DU-Lg6" secondAttribute="height" multiplier="598:672" id="6TQ-hF-TCp"/>
+                        <constraint firstItem="tvx-Yn-hxJ" firstAttribute="leading" secondItem="IgO-DU-Lg6" secondAttribute="leading" constant="10" id="7yB-Qm-Y6h"/>
+                        <constraint firstItem="crj-YZ-iVz" firstAttribute="top" secondItem="RgO-vf-32s" secondAttribute="bottom" constant="7" id="FWj-c5-C2g"/>
+                        <constraint firstItem="crj-YZ-iVz" firstAttribute="width" secondItem="IgO-DU-Lg6" secondAttribute="width" id="J2W-aJ-OpW"/>
+                        <constraint firstItem="crj-YZ-iVz" firstAttribute="leading" secondItem="IgO-DU-Lg6" secondAttribute="leading" id="QTZ-Ht-S1w"/>
+                        <constraint firstItem="RgO-vf-32s" firstAttribute="leading" secondItem="IgO-DU-Lg6" secondAttribute="trailing" multiplier="10:414" id="VRh-Pa-wiY"/>
+                        <constraint firstItem="RgO-vf-32s" firstAttribute="height" secondItem="IgO-DU-Lg6" secondAttribute="height" multiplier="52:672" id="b7s-fz-CzI"/>
+                        <constraint firstItem="RgO-vf-32s" firstAttribute="top" secondItem="IgO-DU-Lg6" secondAttribute="bottom" multiplier="15:672" id="bNf-UJ-0hM"/>
+                        <constraint firstAttribute="trailing" secondItem="tvx-Yn-hxJ" secondAttribute="trailing" constant="10" id="da4-GG-jAB"/>
+                        <constraint firstItem="RgO-vf-32s" firstAttribute="width" secondItem="IgO-DU-Lg6" secondAttribute="width" multiplier="394:414" id="fgn-94-8sS"/>
+                        <constraint firstItem="tvx-Yn-hxJ" firstAttribute="top" secondItem="RgO-vf-32s" secondAttribute="bottom" constant="7" id="rZA-Um-3d5"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="IgO-DU-Lg6" secondAttribute="bottom" id="7h3-ml-bTA"/>
+                <constraint firstItem="IgO-DU-Lg6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ee1-Ae-esN"/>
+                <constraint firstAttribute="trailing" secondItem="IgO-DU-Lg6" secondAttribute="trailing" id="efS-nC-Km4"/>
+                <constraint firstItem="IgO-DU-Lg6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xkU-bC-2aP"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+        <searchDisplayController id="UKu-vQ-Fw2">
+            <connections>
+                <outlet property="delegate" destination="-1" id="bmU-R2-s5N"/>
+                <outlet property="searchContentsController" destination="-1" id="Qpj-jr-x9m"/>
+                <outlet property="searchResultsDataSource" destination="-1" id="43A-pq-NIt"/>
+                <outlet property="searchResultsDelegate" destination="-1" id="rAa-pp-RsW"/>
+            </connections>
+        </searchDisplayController>
+    </objects>
+</document>

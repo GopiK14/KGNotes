@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="16A323" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="FolderList" representedClassName="FolderList" syncable="YES">
+        <attribute name="folderTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Note" inverseName="folder" inverseEntity="Note" syncable="YES"/>
+    </entity>
+    <entity name="Location" representedClassName="Location" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="note" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SingleNote" inverseName="location" inverseEntity="SingleNote" syncable="YES"/>
+    </entity>
+    <entity name="Note" representedClassName="Note" syncable="YES">
+        <attribute name="noteTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="folder" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FolderList" inverseName="notes" inverseEntity="FolderList" syncable="YES"/>
+        <relationship name="noteDetail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SingleNote" inverseName="note" inverseEntity="SingleNote" syncable="YES"/>
+    </entity>
+    <entity name="SingleNote" representedClassName="SingleNote" syncable="YES">
+        <attribute name="detail" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="note" inverseEntity="Location" syncable="YES"/>
+        <relationship name="note" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Note" inverseName="noteDetail" inverseEntity="Note" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="FolderList" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Note" positionX="-54" positionY="0" width="128" height="90"/>
+        <element name="SingleNote" positionX="-36" positionY="36" width="128" height="105"/>
+        <element name="Location" positionX="-27" positionY="63" width="128" height="90"/>
+    </elements>
+</model>
