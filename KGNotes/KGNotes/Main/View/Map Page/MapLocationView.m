@@ -167,7 +167,7 @@
         CLLocation *location = [[CLLocation alloc] initWithLatitude:newPosition.latitude longitude:newPosition.longitude];
         [self getAddressForAnnotation:location];
         commonAnnotation.title = currentPlacemark.title;
-        [self.viewController updateLocationToNote:newPosition.latitude andLongitude:newPosition.longitude];
+        [self.viewController c:newPosition.latitude andLongitude:newPosition.longitude];
     }
 }
 
@@ -185,7 +185,7 @@
         } else {
             self.searchDestinationText.text = tempSearchText;
         }
-        [self.viewController updateLocationToNote:[[userInfo valueForKey:@"lon"] floatValue] andLongitude:[[userInfo valueForKey:@"lon"] floatValue]];
+        [self.viewController updateLocationToNote:[[userInfo valueForKey:@"lon"] doubleValue] andLongitude:[[userInfo valueForKey:@"lon"] doubleValue]];
     }
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"loadSearchLocation" object:nil];
 }
