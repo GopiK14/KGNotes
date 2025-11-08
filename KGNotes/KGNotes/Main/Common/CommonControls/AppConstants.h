@@ -26,3 +26,5 @@
 #define MSG_CAMERA_PERMISSION     @{@"title":@"Request Authorization", @"content": @"It looks like your privacy settings are preventing us from accessing your camera, you can Turn on the Camera in the Settings app."}
 #define MSG_PHOTO_PERMISSION      @{@"title":@"Request Authorization", @"content": @"It looks like your privacy settings are preventing us from accessing your Photos library,  you can Turn on the Photo library in the Settings app."}
 #endif
+
+/* App Permission */
